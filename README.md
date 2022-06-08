@@ -9,6 +9,7 @@ Tested only with FreePBX v.15. Module does not have a signature so it calls aler
 
 ### Added features:
 - Call-destination in queue after agent hangs
+- Toggle enabling options "setinterfacevar" and "setqueuevar" for Queue
 
 _Special thanks to Sangoma Tech for providing and support original free module and Issabel.org community for their work!_  
 
