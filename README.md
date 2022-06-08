@@ -1,3 +1,13 @@
+## Warning
+
+This is an unofficial **experimental** fork of original [FreePBX/queues](https://github.com/FreePBX/queues) module.
+Use at you own risk!
+
+### Added features:
+- Call-destination in queue after agent hangs
+
+_Special thanks to Sangoma Tech for providing and support original free module and Issabel.org community for their work!_  
+
 ```
  ______             _____  ______   __
 |  ____|           |  __ \|  _ \ \ / /
