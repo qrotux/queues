@@ -39,6 +39,8 @@ class Queues extends FreePBX_Helpers implements BMO {
 		$monitor_heard = isset($request['monitor_heard'])?$request['monitor_heard']:'0';
 		$monitor_spoken = isset($request['monitor_spoken'])?$request['monitor_spoken']:'0';
 		$answered_elsewhere = isset($request['answered_elsewhere'])?$request['answered_elsewhere']:'0';
+		$set_interface_var = isset($request['set_interface_var'])?$request['set_interface_var']:'no';
+		$set_queue_var = isset($request['set_queue_var'])?$request['set_queue_var']:'no';
 		$skip_joinannounce = isset($request['skip_joinannounce'])?$request['skip_joinannounce']:'';
 
 		//cron code
