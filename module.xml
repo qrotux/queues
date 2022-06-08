@@ -2,16 +2,17 @@
 	<rawname>queues</rawname>
 	<repo>standard</repo>
 	<name>Queues</name>
-	<version>15.0.34</version>
-	<publisher>Sangoma Technologies Corporation</publisher>
+	<version>15.0.34.1</version>
+	<publisher>Sangoma Technologies Corporation | feat qrotux</publisher>
 	<license>GPLv2+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-2.0.txt</licenselink>
 	<category>Applications</category>
-	<description>Creates a queue where calls are placed on hold and answered on a first-in, first-out basis. Many options are available, including ring strategy for agents, caller announcements, max wait times, etc.</description>
+	<description>Creates a queue where calls are placed on hold and answered on a first-in, first-out basis. Many options are available, including ring strategy for agents, caller announcements, max wait times, etc.. Includes "Call-continue destination"</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/Queues+Module</more-info>
 	<changelog>
-		*15.0.34* FREEI-3852 adding pause all toggle reason 
-		*15.0.33* FREEI-3011 Unable to Configure Queue native app in D-phone 
+		*15.0.34.1* Add extra destination on agent hangup (based on Issabel patch)
+		*15.0.34* FREEI-3852 adding pause all toggle reason
+		*15.0.33* FREEI-3011 Unable to Configure Queue native app in D-phone
 		*15.0.32* FREEI-2920	Method added for Dphone API 
 		*15.0.31* FREEI-2918 Added method for Dphone API 
 		*15.0.30* FREEI-2878 methods added for Dphone API 
@@ -79,6 +80,7 @@
 			<field name="password" type="string" length="20" default=""/>
 			<field name="ivr_id" type="string" length="8" default="0"/>
 			<field name="dest" type="string" length="50" default=""/>
+			<field name="destcontinue" type="string" length="50" default=""/>
 			<field name="cwignore" type="boolean" default="0"/>
 			<field name="queuewait" type="boolean" default="0" notnull="false"/>
 			<field name="use_queue_context" type="boolean" default="0" notnull="false"/>

@@ -7,6 +7,7 @@ function queues_add(
 	$password,
 	$prefix,
 	$goto,
+    $gotocontinue,
 	$agentannounce_id,
 	$members,
 	$joinannounce_id,
@@ -163,6 +164,7 @@ function queues_add(
 		$callback_id    = 'none';
 	}
 	$dest			= isset($goto) ? $goto:'';
+    $destcontinue   = isset($gotocontinue) ? $gotocontinue:'';
 	$cwignore		= isset($cwignore) ? $cwignore:'0';
 	$queuewait		= isset($queuewait) ? $queuewait:'0';
 	$qregex			= isset($qregex) ? $qregex:'';
@@ -181,14 +183,14 @@ function queues_add(
 	$sql = "INSERT INTO queues_config (
 			extension, descr, grppre, alertinfo, joinannounce_id,
 			ringing, agentannounce_id, maxwait, password, ivr_id,
-			callback_id, dest, cwignore, qregex, queuewait,
+			callback_id, dest, destcontinue, cwignore, qregex, queuewait,
 			use_queue_context, togglehint, qnoanswer, callconfirm,
 			callconfirm_id, monitor_type, monitor_heard,
 			monitor_spoken
 		) VALUES (
 			?, ?, ?, ?, ?,
 			?, ?, ?, ?, ?,
-			?, ?, ?, ?, ?,
+			?, ?, ?, ?, ?, ?,
 			?, ?, ?, ?,
 			?, ?, ?,
 			?
@@ -197,7 +199,7 @@ function queues_add(
 	$values = array(
 		$extension, $descr, $grppre, $alertinfo, $joinannounce_id,
 		$ringing, $agentannounce_id, $maxwait, $password, $ivr_id,
-		$callback_id, $dest, $cwignore, $qregex, $queuewait,
+		$callback_id, $dest, $destcontinue, $cwignore, $qregex, $queuewait,
 		$use_queue_context, $togglehint, $qnoanswer, $callconfirm,
 		$callconfirm_id, $monitor_type, $monitor_heard,
 		$monitor_spoken
@@ -335,6 +337,7 @@ function queues_get($account, $queues_conf_only=false) {
 		$results['joinannounce_id']  = $config['joinannounce_id'];
 		$results['password']      = $config['password'];
 		$results['goto']          = $config['dest'];
+        $results['gotocontinue']  = $config['destcontinue'];
 		$results['announcemenu']  = $config['ivr_id'];
 		$results['callback']      = $config['callback_id'];
 		$results['rtone']         = $config['ringing'];

@@ -1,3 +1,17 @@
+## Warning
+
+This is an unofficial **experimental** fork of original [FreePBX/queues](https://github.com/FreePBX/queues) module.
+Use at you own risk!
+
+
+Drop-in replacement for "queues" module with advanced features.
+Tested only with FreePBX v.15. Module does not have a signature so it calls alert notification about unsigned modules. You can ignore it or disable this notifications in FreePBX.
+
+### Added features:
+- Call-destination in queue after agent hangs
+
+_Special thanks to Sangoma Tech for providing and support original free module and Issabel.org community for their work!_  
+
 ```
  ______             _____  ______   __
 |  ____|           |  __ \|  _ \ \ / /
