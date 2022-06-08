@@ -55,6 +55,11 @@ class Queues extends FreePBX_Helpers implements BMO {
 		} else {
 			$goto = '';
 		}
+		if (isset($request['goto1']) && isset($request[$request['goto1']."1"])) {
+			$gotocontinue = $request[$request['goto1']."1"];
+		} else {
+            $gotocontinue = '';
+		}
 		if (isset($request["members"])) {
 			$members = explode("\n",$request["members"]);
 
@@ -149,7 +154,7 @@ class Queues extends FreePBX_Helpers implements BMO {
 						if (!empty($usage_arr)) {
 							$conflict_url = framework_display_extension_usage_alert($usage_arr);
 						} else {
-							queues_add($account,$name,$password,$prefix,$goto,$agentannounce_id,$members,$joinannounce_id,$maxwait,$alertinfo,$cwignore,$qregex,$queuewait,$use_queue_context,$dynmembers,$dynmemberonly,$togglehint,$qnoanswer, $callconfirm, $callconfirm_id, $monitor_type, $monitor_heard, $monitor_spoken, $answered_elsewhere);
+							queues_add($account,$name,$password,$prefix,$goto,$gotocontinue,$agentannounce_id,$members,$joinannounce_id,$maxwait,$alertinfo,$cwignore,$qregex,$queuewait,$use_queue_context,$dynmembers,$dynmemberonly,$togglehint,$qnoanswer, $callconfirm, $callconfirm_id, $monitor_type, $monitor_heard, $monitor_spoken, $answered_elsewhere);
 							needreload();
 							$this_dest = queues_getdest($account);
 							\fwmsg::set_dest($this_dest[0]);
@@ -164,7 +169,7 @@ class Queues extends FreePBX_Helpers implements BMO {
 					break;
 					case "edit":  //just delete and re-add
 						queues_del($account);
-						queues_add($account,$name,$password,$prefix,$goto,$agentannounce_id,$members,$joinannounce_id,$maxwait,$alertinfo,$cwignore,$qregex,$queuewait,$use_queue_context,$dynmembers,$dynmemberonly,$togglehint,$qnoanswer, $callconfirm, $callconfirm_id, $monitor_type, $monitor_heard, $monitor_spoken, $answered_elsewhere);
+						queues_add($account,$name,$password,$prefix,$goto,$gotocontinue,$agentannounce_id,$members,$joinannounce_id,$maxwait,$alertinfo,$cwignore,$qregex,$queuewait,$use_queue_context,$dynmembers,$dynmemberonly,$togglehint,$qnoanswer, $callconfirm, $callconfirm_id, $monitor_type, $monitor_heard, $monitor_spoken, $answered_elsewhere);
 						needreload();
 					break;
 				}
