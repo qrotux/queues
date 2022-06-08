@@ -80,6 +80,8 @@ function queues_add(
         array($account, 'eventmemberstatus', ($_REQUEST['eventmemberstatus']) ? $_REQUEST['eventmemberstatus'] : $amp_conf['QUEUES_EVENTS_MEMEBER_STATUS_DEFAULT'], 0),
         array($account, 'autopausebusy', (isset($_REQUEST['autopausebusy'])) ? $_REQUEST['autopausebusy'] : 'no', 0),
         array($account, 'autopauseunavail', (isset($_REQUEST['autopauseunavail'])) ? $_REQUEST['autopauseunavail'] : 'no', 0),
+        array($account,'setinterfacevar',(!empty($_REQUEST['set_interface_var']))?'yes':'no',0),
+        array($account,'setqueuevar',(!empty($_REQUEST['set_queue_var']))?'yes':'no',0),
     );
     
     foreach($_REQUEST as $key => $value) {

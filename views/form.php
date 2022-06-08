@@ -1221,6 +1221,62 @@ $hookdata = \FreePBX::Queues()->hookTabs();
 			</div>
 		</div>
 		<!--END Call-continue Destination-->
+
+    <!--Set Interface Var-->
+    <div class="element-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-md-3">
+                <label class="control-label" for="set_interface_var">Set Interface Var</label>
+                <i class="fa fa-question-circle fpbx-help-icon" data-for="set_interface_var"></i>
+              </div>
+              <div class="col-md-9 radioset">
+                <input type="radio" name="set_interface_var" id="set_interface_varyes" value="1" <?php echo (isset($set_interface_var) && $set_interface_var == 'yes' ?"CHECKED":"") ?>>
+                <label for="set_interface_varyes"><?php echo _("Yes");?></label>
+                <input type="radio" name="set_interface_var" id="set_interface_varno" value="" <?php echo (isset($set_interface_var) && $set_interface_var == 'yes' ?"":"CHECKED") ?>>
+                <label for="set_interface_varno"><?php echo _("No");?></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <span id="set_interface_var-help" class="help-block fpbx-help-block">Toggling property "setinterfacevar"</span>
+        </div>
+      </div>
+    </div>
+    <!--END Set Interface Var-->
+
+    <!--Set Queue Var-->
+    <div class="element-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="form-group">
+              <div class="col-md-3">
+                <label class="control-label" for="set_queue_var">Set Queue Var</label>
+                <i class="fa fa-question-circle fpbx-help-icon" data-for="set_queue_var"></i>
+              </div>
+              <div class="col-md-9 radioset">
+                <input type="radio" name="set_queue_var" id="set_queue_varyes" value="1" <?php echo (isset($set_queue_var) && $set_queue_var == 'yes' ?"CHECKED":"") ?>>
+                <label for="set_queue_varyes"><?php echo _("Yes");?></label>
+                <input type="radio" name="set_queue_var" id="set_queue_varno" value="" <?php echo (isset($set_queue_var) && $set_queue_var == 'yes' ?"":"CHECKED") ?>>
+                <label for="set_queue_varno"><?php echo _("No");?></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <span id="set_queue_var-help" class="help-block fpbx-help-block">Toggling property "setqueuevar"</span>
+        </div>
+      </div>
+    </div>
+    <!--END Set Queue Var-->
 	</div>
 	<!--End of General Tab -->
 	<div role="tabpanel" id="qagentlist" class="tab-pane">
